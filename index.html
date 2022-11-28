@@ -7,23 +7,44 @@
 </head>
 
 <body>
-  <div class="alert-box" id="alert">
-    알림창
-    <button onclick="Alert('none')">
-      닫기
-    </button>
+
+  <div class="login-box" id='login-box'>
+    <div>
+      <h4>로그인</h4>
+      <p id='title'>입력해주세요.</p>
+      <input type="text" style="padding: 10px;">
+    </div>
+    <div>
+      <button  id="close" style="margin: 10px;">
+        창닫기  
+      </button>
+    </div>
+
   </div>
-  <button onclick="Alert('block')">
-    버튼
+
+
+
+  <button onclick="loginAlert('block', '아이디를 입력해주세요.')" style="margin: 10px;">
+    로그인
+  </button>
+  <button onclick="loginAlert('block', '비밀번호를 입력해주세요.')" style="margin: 10px;">
+    비밀번호
   </button>
 
 
   <script>
-    function Alert(a) {
-      document.getElementById('alert').style.display = a;
+        
+    document.getElementById('close').addEventListener('click', function(){
+      document.getElementById('login-box').style.display = 'none';
+    });
+    
+    function loginAlert(a, b){
+      document.getElementById('login-box').style.display = a;
+      document.getElementById('title').innerHTML= b;
     }
-
-
+    
+    
+    
   </script>
 
 
