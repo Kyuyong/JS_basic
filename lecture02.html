@@ -37,7 +37,8 @@
 
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
-      <span class="navbar-brand">Navbar</span>
+      <span class="navbar-brand">JSShop</span>
+      <span class="badge bg-dark">Dark 🔄</span>
       <button class="navbar-toggler" type="button">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -61,21 +62,16 @@
 
 
   <script>
-    //    $('#send').on('click', function(){
-    //      if($('#send').value == null){
-    //         alert('값을 입력하세요.');
-    //         } 
-    //    });
-
-    // 비밀번호 6자미만이면 안내문 띄우기 
-    // .value.length 사용
+    document.getElementById('email').addEventListener('input', function() {
+      console.log('hello')
+    })
 
     $('form').on('submit', function(e) {
       if (document.getElementById('email').value == '' ||
         document.getElementById('passwd').value == '') {
         alert('아이디와 패스워드를 입력하세요.');
         e.preventDefault(); // 실행을 안되게 막음
-      } else if (document.getElementById('passwd').value.length<6) {
+      } else if (document.getElementById('passwd').value.length < 6) {
         alert('비밀번호를 6자리 이상을 작성하세요.');
         e.preventDefault(); // 실행을 안되게 막음
       }
@@ -83,6 +79,14 @@
 
     //    전송 버튼 누르면
     //    input에 입력한 값이 공백이면 알림창 띄워주기 (조건문)
+
+    //    badge 클릭 횟수가 홀수면 내부 글자를 light로 변경
+    //    badge 클릭 횟수가 짝수면 내부 글자를 dark로 변경
+    
+    
+    
+
+
   </script>
 
 
@@ -97,7 +101,6 @@
     })
 
 
-
     //    $('#login').on('click', function(){
     //      $('.black-bg').addClass('show-modal');
     //    });
@@ -110,9 +113,37 @@
       document.querySelectorAll('.list-group')[0].classList.toggle('show');
     });
 
-    //    document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function(){
-    //      document.getElementsByClassName('list-group')[0].classList.toggle('show');
-    //    });
+
+    function game369(a) {
+      if (a % 3 == 0) {
+        console.log('OK');
+
+      } else if (a % 3 > 0) {
+        console.log('Pass');
+      }
+
+      //      else {
+      //        console.log('Pass');
+      //      }
+    };
+
+
+    function game369_1(a) {
+      if (a % 3 == 0) {
+        var b = a / 3;
+        for (var i = 0; i < b; i++) {
+          console.log('OK');
+        }
+
+      } else if (a % 3 > 0) {
+        console.log('Pass');
+      }
+
+      //      else {
+      //        console.log('Pass');
+      //      }
+    };
+
   </script>
 
 
@@ -120,4 +151,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 
-</body></html>
+</body>
+
+</html>
