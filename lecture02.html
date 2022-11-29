@@ -15,6 +15,15 @@
 
 
 <body>
+ 
+ <div class="black-bg">
+   <div class="white-bg">
+     <h4>로그인 하세요.</h4>
+     <button class="btn btn-danger" id="close">닫기</button>
+   </div>
+ </div>
+ 
+ 
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
       <span class="navbar-brand">Navbar</span>
@@ -31,16 +40,38 @@
     <li class="list-group-item">A fourth item</li>
     <li class="list-group-item">And a fifth one</li>
   </ul>
+  
+  
+  <button id="login">로그인</button>
 
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
   <script>
+    $('#login').on('click', function(){
+      $('.black-bg').css('display','block');
+    });
+    
+    $('#close').on('click', function(){
+      $('.black-bg').css('display', 'none');
+    })
+    
+    
+    
+//    $('#login').on('click', function(){
+//      $('.black-bg').addClass('show-modal');
+//    });
+//    
+//    $('#login').on('click', function(){
+//      $('.black-bg').removeClass('show-modal');
+//    });
+
     document.querySelector('.list-group').addEventListener('click', function(){
       document.querySelectorAll('.list-group')[0].classList.toggle('show');
     });
 
-    document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function(){
-      document.getElementsByClassName('list-group')[0].classList.toggle('show');
-    });
+//    document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function(){
+//      document.getElementsByClassName('list-group')[0].classList.toggle('show');
+//    });
 
   </script>
 
