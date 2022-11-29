@@ -57,15 +57,47 @@
     <h4>Shirts on Sale</h4>
     <button id="login" class="btn btn-danger">로그인</button>
   </div>
+  
+  
+  <div style = "padding: 20px; margin: 10px;">
+    <p>태조 이성계가 태어난 년도는?</p>
+    <input type="text" id="answer">
+    <button id="send-answer">제출</button>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
 
   <script>
+    
+    
+   
+    var count = 0;
+    
+    $('#send-answer').on('click', function(){
+      count ++;
+      var user_answer = $('#answer').val();
+      if(user_answer=='1335'){
+        alert('정답입니다.')
+        
+      } else if(count>=3 && user_answer !='1335'){
+        alert('멍청이!')
+      }
+    });
+    
+    
+    
+    
+    
+    
+    
     document.getElementById('email').addEventListener('input', function() {
       console.log('hello')
     })
 
+    
+    //    전송 버튼 누르면
+    //    input에 입력한 값이 공백이면 알림창 띄워주기 (조건문)
     $('form').on('submit', function(e) {
       if (document.getElementById('email').value == '' ||
         document.getElementById('passwd').value == '') {
@@ -77,21 +109,26 @@
       }
     })
 
-    //    전송 버튼 누르면
-    //    input에 입력한 값이 공백이면 알림창 띄워주기 (조건문)
+
 
     //    badge 클릭 횟수가 홀수면 내부 글자를 light로 변경
     //    badge 클릭 횟수가 짝수면 내부 글자를 dark로 변경
-    
-    
-    
+    var count = 0;
+    $('.badge').on('click', function() {
+      count++;
+
+      if (count % 2 == 1) {
+        $('.badge').html('Light 🔄');
+
+      } else {
+        $('.badge').html('Dark 🔄');
+      }
+    });
 
 
-  </script>
 
 
 
-  <script>
     $('#login').on('click', function() {
       $('.black-bg').css('display', 'block');
     });
@@ -101,48 +138,9 @@
     })
 
 
-    //    $('#login').on('click', function(){
-    //      $('.black-bg').addClass('show-modal');
-    //    });
-    //    
-    //    $('#login').on('click', function(){
-    //      $('.black-bg').removeClass('show-modal');
-    //    });
-
     document.querySelector('.list-group').addEventListener('click', function() {
       document.querySelectorAll('.list-group')[0].classList.toggle('show');
     });
-
-
-    function game369(a) {
-      if (a % 3 == 0) {
-        console.log('OK');
-
-      } else if (a % 3 > 0) {
-        console.log('Pass');
-      }
-
-      //      else {
-      //        console.log('Pass');
-      //      }
-    };
-
-
-    function game369_1(a) {
-      if (a % 3 == 0) {
-        var b = a / 3;
-        for (var i = 0; i < b; i++) {
-          console.log('OK');
-        }
-
-      } else if (a % 3 > 0) {
-        console.log('Pass');
-      }
-
-      //      else {
-      //        console.log('Pass');
-      //      }
-    };
 
   </script>
 
