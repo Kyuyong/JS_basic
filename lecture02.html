@@ -111,6 +111,20 @@
 
   <script>
     
+    $('.lorem').on('scroll', function(){
+      var scroll_val = document.querySelector('.lorem').scrollTop;
+      var scroll_height = document.querySelector('.lorem').scrollHeight;
+      var scroll_clientheight = document.querySelector('.lorem').clientHeight;
+      console.log(scroll_val);
+      console.log(scroll_height);
+      console.log(scroll_clientheight);
+      
+      if(scroll_height ==(scroll_val+scroll_clientheight+10) ){
+         alert('끝까지 스크롤을 내렸습니다.');
+         }
+      
+    });
+    
     
     $(window).on('scroll', function(){
       if(window.scrollY > 50){
