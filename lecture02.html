@@ -57,45 +57,100 @@
     <h4>Shirts on Sale</h4>
     <button id="login" class="btn btn-danger">로그인</button>
   </div>
-  
-  
-  <div style = "padding: 20px; margin: 10px;">
+
+
+  <div style="padding: 20px; margin: 10px;">
     <p>태조 이성계가 태어난 년도는?</p>
     <input type="text" id="answer">
     <button id="send-answer">제출</button>
   </div>
 
+
+  <div class="alert alert-danger">
+    <span id="timer">5</span>초 이내 구매시 사은품 증정!
+  </div>
+
+
+
+
+
+
+
+
+
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
 
   <script>
+    var num = Number($('#timer').text());
+
+
+
+//
+//    setInterval(function() {
+//      if (num == 5) {
+//        $('#timer').html(num.toString());
+//        num -= 1;
+//      } else if (num == 4) {
+//        $('#timer').html(num.toString());
+//        num -= 1;
+//      } else if (num == 3) {
+//        $('#timer').html(num.toString());
+//        num -= 1;
+//      }
+//      else if (num == 2) {
+//        $('#timer').html(num.toString());
+//        num -= 1;
+//      }
+//      else if (num == 1) {
+//        $('#timer').html(num.toString());
+//        num -= 1;
+//      }
+//      else  {
+//        $('.alert').hide();
+//      }
+//
+//    }, 1000);
     
-    
-   
+    setInterval(function(){
+      num -= 1;
+      if(num >=0){
+        $('#timer').html(num.toString());
+      } else{
+        $('.alert').hide();
+      }
+    }, 1000);
+
+
+
+
+
+
+
     var count = 0;
-    
-    $('#send-answer').on('click', function(){
-      count ++;
+
+    $('#send-answer').on('click', function() {
+      count++;
       var user_answer = $('#answer').val();
-      if(user_answer=='1335'){
+      if (user_answer == '1335') {
         alert('정답입니다.')
-        
-      } else if(count>=3 && user_answer !='1335'){
+
+      } else if (count >= 3 && user_answer != '1335') {
         alert('멍청이!')
       }
     });
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     document.getElementById('email').addEventListener('input', function() {
       console.log('hello')
     })
 
-    
+
     //    전송 버튼 누르면
     //    input에 입력한 값이 공백이면 알림창 띄워주기 (조건문)
     $('form').on('submit', function(e) {
