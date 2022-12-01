@@ -1,3 +1,13 @@
+
+
+var car2 = {name : '소나타', price :[50000,3000,4000], color: 'white'}
+
+document.querySelector('.car-title').innerHTML = car2.name;
+document.querySelector('.car-price').innerHTML = car2.price[0];
+
+
+
+
 var num = $('li').length;
 
 
