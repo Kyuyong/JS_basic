@@ -1,11 +1,10 @@
-
 .alert-box {
-    background-color:kyblue;
-    padding: 20px;
-    color: white;
-    border-radius: 5px;
-    display: none;
-    
+  background-color: kyblue;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  display: none;
+
 }
 
 .login-box {
@@ -25,13 +24,13 @@
   width: 100%;
   height: 100%;
   position: fixed;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 5;
   padding: 30px;
   display: none;
 }
 
-.white-bg{
+.white-bg {
   background: white;
   border-radius: 5px;
   padding: 30px;
@@ -49,17 +48,17 @@
 
 
 .slide-container {
-  width:300vw;
+  width: 300vw;
   transition: all 1s;
-  
+
 }
 
 .slide-box {
-  width:100vw;
-  float:left;
+  width: 100vw;
+  float: left;
 }
 
-.slide-box img{
+.slide-box img {
   width: 100%;
 }
 
@@ -73,19 +72,31 @@
 
 .navbar-brand {
   font-size: 30px;
-  
+
 }
 
 
 
 
+ul.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+ul.list::after {
+  content: '';
+  display: block;
+  clear: both;
+}
 
 .tab-button {
   display: block;
-  padding : 10px 20px 10px 20px;
-  float:left;
-  margin-left: -1px;
+  padding: 10px 20px 10px 20px;
+  float: left;
   margin-right: -1px;
+  margin-bottom: -1px;
   color: grey;
   text-decoration: none;
   cursor: pointer;
@@ -102,23 +113,8 @@
 
 .tab-content {
   display: none;
-  padding : 10px;
+  padding: 10px;
 }
-
-ul.list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  border-bottom: 1px solid #ccc;
-  
-}
-
-ul.list::after {
-  content: '';
-  display: block;
-  clear:both;
-}
-
 
 .show {
   display: block;
