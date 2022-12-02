@@ -120,6 +120,6 @@ ul.list::after {
   display: block;
 }
 
-.hide {
+.form-hide {
   display: none;
 }
