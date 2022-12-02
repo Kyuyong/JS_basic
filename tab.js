@@ -1,20 +1,44 @@
-var formselect0 = $('.form-select').eq(0);
-var formselect1 = $('.form-select').eq(1);
-var pantsoption = '<option>28</option> <option>30</option>'
-var shirtsoption = '<option>95</option> <option>100</option>'
+var pants = [28,30,32,34];
 
-formselect0.on('input', function(){
-  var val = this.value;
-  if(val=='셔츠'){
-    formselect1.removeClass('form-hide');
-  } else if(val=='바지'){
-    formselect1.removeClass('form-hide');
-    formselect1.html(pantsoption);
-  } else if(val=='모자'){
-    formselect1.addClass('form-hide');
-  }
+  $('.form-select').eq(0).on('input', function(){
 
-});
+    var value = this.value;
+    if (value == '셔츠') {
+      $('.form-select').eq(1).removeClass('form-hide');
+    }
+    else if (value == '바지'){
+      $('.form-select').eq(1).removeClass('form-hide');
+      $('.form-select').eq(1).html('');
+      pants.forEach(function(a){
+        $('.form-select').eq(1).append(`<option>${a}</option>`)
+        });
+       }
+  });
+
+var obj = {name:'kim', age:28};
+
+for (var key in obj){
+  console.log(key)
+};
+
+//// 조규용 작성
+//var formselect0 = $('.form-select').eq(0);
+//var formselect1 = $('.form-select').eq(1);
+//var pantsoption = '<option>28</option> <option>30</option>'
+//var shirtsoption = '<option>95</option> <option>100</option>'
+//
+//formselect0.on('input', function(){
+//  var val = this.value;
+//  if(val=='셔츠'){
+//    formselect1.removeClass('form-hide');
+//  } else if(val=='바지'){
+//    formselect1.removeClass('form-hide');
+//    formselect1.html(pantsoption);
+//  } else if(val=='모자'){
+//    formselect1.addClass('form-hide');
+//  }
+//
+//});
 
 
 
