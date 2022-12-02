@@ -1,6 +1,54 @@
+var formselect0 = $('.form-select').eq(0);
+var formselect1 = $('.form-select').eq(1);
+var pantsoption = '<option>28</option> <option>30</option>'
+var shirtsoption = '<option>95</option> <option>100</option>'
+
+formselect0.on('input', function(){
+  var val = this.value;
+  if(val=='셔츠'){
+    formselect1.removeClass('form-hide');
+  } else if(val=='바지'){
+    formselect1.removeClass('form-hide');
+    formselect1.html(pantsoption);
+  } else if(val=='모자'){
+    formselect1.addClass('form-hide');
+  }
+
+});
 
 
-var car2 = {name : '소나타', price :[50000,3000,4000], color: 'white'}
+
+
+
+
+//html 추가 방법 1 이게 조금 더 빠름. 성능이 좋음. 
+//var a = document.createElement('p');
+//a.innerHTML = '안녕';
+//document.querySelector('#test').appendChild(a);
+//
+//
+//// html 추가 방법 2 
+//var template = '<p>안녕</p>';
+//document.querySelector('#test').insertAdjacentHTML('beforeend', template);
+//$('#test').append(template);
+
+
+
+
+
+//$('.form-select').eq(0).on('input', function () {
+//  var val = this.value;
+//  if (val == '셔츠') {
+//    $('.form-select').eq(1).removeClass('form-hide');
+//  };
+//});
+
+
+var car2 = {
+  name: '소나타',
+  price: [50000, 3000, 4000],
+  color: 'white'
+}
 
 document.querySelector('.car-title').innerHTML = car2.name;
 document.querySelector('.car-price').innerHTML = car2.price[0];
