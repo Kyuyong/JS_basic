@@ -83,6 +83,16 @@
 //  문자 중간에 변수를 넣고 싶을때, ${a} 활용하고, 문자 묶음은
 
 //    `hi ${a} world`
+    
+    
+    
+    $.get('https://codingapple1.github.io/price.json').done(function(data){
+      console.log(data.price);
+    })
+    .fail(function(){
+      console.log(data);
+    })
+    ;
   
   
   </script>
