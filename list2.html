@@ -30,6 +30,8 @@
 
 	<div class="container my-3">
 		<button class="btn btn-danger" id="more">더보기</button>
+		
+		
 	</div>
 
 
@@ -59,11 +61,25 @@
               <img src="https://via.placeholder.com/600" class="w-100">
               <h5>${data.title}</h5>
               <p>가격 : ${data.price}</p>
+							<button class="buy">구매</button>
             </div>`;
 				$('.row').append(template)
 			});
 		};
 
+		localStorage.setItem('이름','Kim');
+		localStorage.getItem('이름');
+		localStorage.removeItem('이름');
+		
+		var arr= [1,2,3];
+		var newarr = JSON.stringify(arr);
+		
+		localStorage.setItem('num', newarr);
+		var 꺼낸거 = localStorage.getItem('num');
+		JSON.parse(꺼낸거);
+		console.log(JSON.parse(꺼낸거)[0]);		
+		
+		
 		createbox(products);
 
 
