@@ -23,19 +23,19 @@
 				<img src="https://via.placeholder.com/600" class="w-100">
 				<h5>Blossom Dress</h5>
 				<p>가격 : 70000</p>
-				<button class="buy">구매</button>
+				<button class="buy">구매1</button>
 			</div>
 			<div class="col-sm-4">
 				<img src="https://via.placeholder.com/600" class="w-100">
 				<h5>Springfield Shirt</h5>
 				<p>가격 : 50000</p>
-				<button class="buy">구매</button>
+				<button class="buy">구매2</button>
 			</div>
 			<div class="col-sm-4">
 				<img src="https://via.placeholder.com/600" class="w-100">
 				<h5>Black Monastery</h5>
 				<p>가격 : 60000</p>
-				<button class="buy">구매</button>
+				<button class="buy">구매3</button>
 			</div>
 		</div>
 	</div>
@@ -60,21 +60,56 @@
 			}
 		];
 
-//		// 브라우저 로컬 스토리지 사용방법 
-//
-//		localStorage.setItem('이름', 'Kim');
-//		localStorage.getItem('이름');
-//		localStorage.removeItem('이름');
-//
-//		// 로컬스토리지는 문자,숫자 저장만 가능해지만, JSON으로 변환하면 저장가능
-//		var arr = [1, 2, 3];
-//		var newarr = JSON.stringify(arr);
-//
-//		localStorage.setItem('num', newarr);
-//		var 꺼낸거 = localStorage.getItem('num');
-//		JSON.parse(꺼낸거);
-//		console.log(JSON.parse(꺼낸거)[0]);
+		var arr = [];
 
+		//		구매를 클릭하면 상품명을 가져오고
+		//		상품명을 가져오면 
+
+		// 		로컬 스토리지에 저장한다
+		//		
+		//		로컬 스토리지에 저장할때 null 이면 
+		//		바로 arr를 저장을 하고 
+		//		로컬 스토리지가 가득이면, cart를 지우고 다시 arr를 저장을 한다. 
+
+
+		$('.buy').click(function() {
+			var productsTilte = $(this).siblings().eq(1).text();
+			//			console.log(productsTilte);			
+			arr.push(productsTilte);
+			if (JSON.parse(localStorage.getItem('cart')) == null) {
+				localStorage.setItem('cart', JSON.stringify(arr));
+			} else {
+				localStorage.removeItem('cart');
+				localStorage.setItem('cart', JSON.stringify(arr));
+			};
+
+		});
+
+		//		localStorage.setItem('cart', JSON.stringify(arr));
+
+
+		// if(JSON.parse(localStorage.getItem('cart')) == null){
+		// localStorage.setItem('cart', JSON.stringify(arr));
+		// }else {
+		// localStorage.removeItem('cart');
+		// localStorage.setItem('cart', JSON.stringify(arr));
+		// };
+		//
+
+		//		// 브라우저 로컬 스토리지 사용방법 
+		//
+		//		localStorage.setItem('이름', 'Kim');
+		//		localStorage.getItem('이름');
+		//		localStorage.removeItem('이름');
+		//
+		//		// 로컬스토리지는 문자,숫자 저장만 가능해지만, JSON으로 변환하면 저장가능
+		//		var arr = [1, 2, 3];
+		//		var newarr = JSON.stringify(arr);
+		//
+		//		localStorage.setItem('num', newarr);
+		//		var 꺼낸거 = localStorage.getItem('num');
+		//		JSON.parse(꺼낸거);
+		//		console.log(JSON.parse(꺼낸거)[0]);
 	</script>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
