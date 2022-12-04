@@ -18,6 +18,8 @@
 <body>
 
 	<div class="container">
+	
+	  <h1>물품 팝니다.</h1>
 		<div class="row">
 			<div class="col-sm-4">
 				<img src="https://via.placeholder.com/600" class="w-100">
@@ -35,10 +37,13 @@
 				<img src="https://via.placeholder.com/600" class="w-100">
 				<h5>Black Monastery</h5>
 				<p>가격 : 60000</p>
-				<button class="buy">구매3</button>
+				 <button class="buy">구매3</button>
 			</div>
 		</div>
 	</div>
+	
+
+
 
 
 
@@ -71,19 +76,37 @@
 		//		바로 arr를 저장을 하고 
 		//		로컬 스토리지가 가득이면, cart를 지우고 다시 arr를 저장을 한다. 
 
+// 내가 만든 소스 
+//		$('.buy').click(function() {
+//			var productsTilte = $(this).siblings().eq(1).text();
+//			//			console.log(productsTilte);			
+//			arr.push(productsTilte);
+//			if (JSON.parse(localStorage.getItem('cart')) == null) {
+//				localStorage.setItem('cart', JSON.stringify(arr));
+//			} else {
+//				localStorage.removeItem('cart');
+//				localStorage.setItem('cart', JSON.stringify(arr));
+//			};
+//
+//		});
+    
+    
+// 숙제결과 소스 
+    $('.buy').click(function(e){
+      var title = $(e.target).siblings('h5').text();
 
-		$('.buy').click(function() {
-			var productsTilte = $(this).siblings().eq(1).text();
-			//			console.log(productsTilte);			
-			arr.push(productsTilte);
-			if (JSON.parse(localStorage.getItem('cart')) == null) {
-				localStorage.setItem('cart', JSON.stringify(arr));
-			} else {
-				localStorage.removeItem('cart');
-				localStorage.setItem('cart', JSON.stringify(arr));
-			};
-
-		});
+      if(localStorage.getItem('cart') != null){
+         var arr = JSON.parse(localStorage.cart);
+         arr.push(title);
+         localStorage.setItem('cart', JSON.stringify(arr));
+         }
+     else{
+         localStorage.setItem('cart', JSON.stringify([title]));
+         }
+      
+    });
+    
+    
 
 		//		localStorage.setItem('cart', JSON.stringify(arr));
 
