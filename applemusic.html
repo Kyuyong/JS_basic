@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="main.css">
+
+	<title>Apple Music Copy!</title>
+</head>
+
+<body>
+
+	<div class="card-background">
+		<div class="card-box">
+			<img src="image/card1.png" alt="">
+		</div>
+		<div class="card-box">
+			<img src="image/card2.png" alt="">
+		</div>
+		<div class="card-box">
+			<img src="image/card3.png" alt="">
+		</div>
+	</div>
+
+	<script>
+		$(window).scroll(function() {
+			var 높이 = $(window).scrollTop();
+			console.log(높이);
+
+			var y = (-1 / 500) * 높이 + 115 / 50;
+			$('.card-box').eq(0).css('opacity', y);
+			var z = (-1 / 5000) * 높이 + 565 / 500;
+			$('.card-box').eq(0).css('transform', `scale( ${z} )`);
+		});
+
+
+		//		650 ~ 1150까지 스크롤바를 내리면, 첫째카듸 opacity 1~0으로 서서히 변경해주세요. 
+		//			y = (-1/500) * 높이 + 115/50;
+		//			1 = a * 650 + b;
+		//			0 = a * 1150 + b;
+		//			a = -1/500;
+		//			b = 115/50;
+
+		//		사이즈를 줄이는건 transform : scale(0.9) 이런 속성을 이용하시면 되겠습니다. 
+		//그런데 0.9를 그대로 박아넣는게 아니라
+		//미지의 변수 z같은걸 만들어서 
+		//z = a * 높이 + b 이렇게 수식을 세운 뒤 
+		//높이가 650일 때 z는 1,
+		//높이가 1150일 때 z는 0.9 이니까
+		//대입법으로 a와 b라는 상수를 구하시면 
+	</script>
+
+
+</body></html>
